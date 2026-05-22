@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bátai László - software developer portfolio and CV." />
+  <title>Bátai László | Software Developer CV</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="signal-field" aria-hidden="true"></canvas>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Back to top">
+      <span class="brand-mark">LB</span>
+      <span>Bátai László</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="#work" data-i18n="navWork">Projects</a>
+      <a href="#skills" data-i18n="navSkills">Stack</a>
+      <a href="#timeline" data-i18n="navTimeline">Path</a>
+      <a href="#contact" data-i18n="navContact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="language-switch" aria-label="Language">
+        <button class="language-option is-active" type="button" data-lang="en">EN</button>
+        <button class="language-option" type="button" data-lang="hu">HU</button>
+      </div>
+      <button class="icon-action" id="theme-toggle" type="button" aria-label="Switch color theme">
+        <span class="theme-glyph" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <p class="eyebrow" data-i18n="heroEyebrow">Software developer in progress</p>
+        <h1 data-i18n-html="heroTitle">I build clean interfaces, data tools, and AI-powered prototypes.</h1>
+        <p class="hero-lead" data-i18n="heroLead">
+          Programtervező informatikus student focused on turning ideas into usable software: responsive web apps, Python automation, ML experiments, and polished product interfaces.
+        </p>
+
+        <div class="hero-actions" aria-label="Main actions">
+          <a class="button primary" href="Bátai László CV.pdf" download data-i18n="downloadPdf">Download PDF</a>
+          <a class="button secondary" href="mailto:lbatai626@gmail.com" data-i18n="emailMe">Email me</a>
+          <button class="button subtle" type="button" id="print-cv" data-i18n="printCv">Print</button>
+        </div>
+
+        <div class="signal-stats" aria-label="Profile highlights">
+          <div>
+            <strong>2026</strong>
+            <span data-i18n="statGraduation">expected BSc finish</span>
+          </div>
+          <div>
+            <strong>4+</strong>
+            <span data-i18n="statProjects">recent software projects</span>
+          </div>
+          <div>
+            <strong>B2</strong>
+            <span data-i18n="statEnglish">English proficiency</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portrait-stage reveal" data-reveal-delay="120">
+        <div class="portrait-frame">
+          <img src="én.jpg" alt="Portrait of Bátai László" />
+          <div class="portrait-scan" aria-hidden="true"></div>
+        </div>
+        <div class="status-line">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span data-i18n="statusText">Open to internship and junior developer opportunities</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-band">
+      <div class="section-shell intro-grid">
+        <article class="intro-item reveal">
+          <span class="section-kicker" data-i18n="focusOneKicker">Current focus</span>
+          <h2 data-i18n="focusOneTitle">Practical product building</h2>
+          <p data-i18n="focusOneText">I like projects where the interface, logic, and data flow all matter. Recent work spans predictive football analytics, email verification, file-sharing UX, and AI UI concepts.</p>
+        </article>
+        <article class="intro-item reveal" data-reveal-delay="80">
+          <span class="section-kicker" data-i18n="focusTwoKicker">Working style</span>
+          <h2 data-i18n="focusTwoTitle">Curious, precise, persistent</h2>
+          <p data-i18n="focusTwoText">I learn quickly, debug patiently, and prefer code that is readable enough for the next person to trust. I am looking for real-world experience where I can keep growing fast.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell" id="work">
+      <div class="section-heading reveal">
+        <span class="section-kicker" data-i18n="projectsKicker">Selected work</span>
+        <h2 data-i18n="projectsTitle">Recent projects with real implementation depth</h2>
+        <p data-i18n="projectsLead">A tighter snapshot of what your last months say about your level now: not just coursework, but shipped-looking interfaces, APIs, ML logic, and desktop tooling.</p>
+      </div>
+
+      <div class="project-toolbar reveal" aria-label="Project filters">
+        <button type="button" class="filter-chip is-active" data-filter="all" data-i18n="filterAll">All</button>
+        <button type="button" class="filter-chip" data-filter="ai" data-i18n="filterAI">AI & data</button>
+        <button type="button" class="filter-chip" data-filter="ui" data-i18n="filterUI">UI</button>
+        <button type="button" class="filter-chip" data-filter="systems" data-i18n="filterSystems">Systems</button>
+      </div>
+
+      <div class="project-grid" id="project-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="section-shell split-section" id="skills">
+      <div class="section-heading sticky-heading reveal">
+        <span class="section-kicker" data-i18n="skillsKicker">Stack</span>
+        <h2 data-i18n="skillsTitle">A broad toolkit</h2>
+        <p data-i18n="skillsLead">Grouped by how you actually use the tools: application logic, interfaces, data, and day-to-day engineering habits.</p>
+      </div>
+      <div class="skill-groups" id="skill-groups"></div>
+    </section>
+
+    <section class="section-shell timeline-section" id="timeline">
+      <div class="section-heading reveal">
+        <span class="section-kicker" data-i18n="timelineKicker">Path</span>
+        <h2 data-i18n="timelineTitle">Education and work experience</h2>
+      </div>
+      <div class="timeline-groups" id="timeline-list"></div>
+    </section>
+
+    <section class="section-shell contact-section" id="contact">
+      <div class="contact-copy reveal">
+        <span class="section-kicker" data-i18n="contactKicker">Contact</span>
+        <h2 data-i18n="contactTitle">Let’s build something useful.</h2>
+        <p data-i18n="contactLead">I am especially interested in student work, internships, and junior roles where I can contribute to web apps, automation, data-heavy tools, or product-facing software.</p>
+      </div>
+
+      <div class="contact-panel reveal" data-reveal-delay="120">
+        <a href="mailto:lbatai626@gmail.com">lbatai626@gmail.com</a>
+        <a href="tel:+36308437322">+36 30 843 7322</a>
+        <div class="contact-actions">
+          <button class="button secondary" type="button" id="copy-email" data-i18n="copyEmail">Copy email</button>
+          <a class="button primary" href="Bátai László CV.pdf" target="_blank" rel="noreferrer" data-i18n="openPdf">Open PDF</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span id="year"></span> Bátai László</span>
+    <span data-i18n="footerText">2026</span>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
