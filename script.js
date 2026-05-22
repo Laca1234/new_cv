@@ -47,7 +47,7 @@ const cvData = {
       "I am especially interested in student work, internships, and junior roles where I can contribute to web apps, automation, data-heavy tools, or product-facing software.",
     copyEmail: "Copy email",
     openPdf: "Open PDF",
-    footerText: "Designed as an interactive CV and developer portfolio.",
+    footerText: "All rights reserved.",
     copied: "Email copied to clipboard.",
     copyFallback: "Email: lbatai626@gmail.com",
   },
